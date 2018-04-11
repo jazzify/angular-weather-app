@@ -1,0 +1,33 @@
+<main class="wrapper">
+
+  <section class="title-container" >
+    <h1>Weather Finder</h1>
+    <p>Find out temperature, conditions and more...</p>
+  </section>
+
+  <section class="main-container">
+    <form class="weather-form">
+      <input 
+      type="text"
+      name="city" 
+      placeholder="City..."
+      #cityName
+      >
+      <button type="submit" (click)="onGetWeather()" >Get Weather</button>
+    </form>
+
+    <div class="weather-info">
+      <p *ngIf="errorMessage"><span>Error:</span> {{errorMessage}}</p>
+      <div *ngIf="showInfo">
+        <p><span>Location:</span> {{weather_element.city}}, {{weather_element.country}} </p>  
+        <p><span>Temperature:</span> {{weather_element.temperature}} </p>
+        <p><span>Humidity:</span> {{weather_element.humidity}} </p>
+        <p><span>Conditions:</span> {{weather_element.conditions}} </p>
+      </div>
+    </div>
+
+
+
+  </section>
+
+</main>
